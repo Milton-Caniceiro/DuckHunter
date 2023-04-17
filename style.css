@@ -17,16 +17,56 @@ img {
     transform: rotate(-90deg);
 }
 
-#duckr:hover {
+#duck:hover {
     transform: rotate(180deg);
 }
+#duck {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 50%;
+      width: 50%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 50%;
+    }
+  }
+  
 
+#duck2{
+    margin:50px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 600px;
+    top: 100px; 
+    transition: transform 3s;
+    transform: rotate(-90deg);
+}
+
+#duck2:hover {
+    transform:translateY(20px);
+}
 #dog{
     margin:50px;
     width: 100px;
     height: 100px;
     position: absolute;
     left: 450px;
+    top: 450px; 
+}
+
+#dog2{
+    margin:50px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 650px;
     top: 450px; 
 }
 
