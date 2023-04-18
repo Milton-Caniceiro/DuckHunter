@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Hunt</title>
     <link rel="stylesheet" href="style.css">
-    <title></title>
 
 </head>
 <body>
     <div class="container">
-        <img src="https://bit.ly/2Q4q14a">
-        <img id='duck' src="duck2.png" alt="duck">
-        <div id="demo">
-            <div id="image" onmouseover="animateScript()"> </div>
-          </div>
-        <div class='scoreContainer'>
-          <div id="score-text">Score</div>
-          <div id="score-counter">0</div>
-        </div>
+      <img src="https://bit.ly/2Q4q14a" id="field" alt="backgroundImage">
+      <div src="duck-hunt.png" id="duck-image"></div>
+      <div src="duck-hunt.png" id="dog-image"></div>
+      <div class='scoreContainer'>
+        <div id="score-text">Score</div>
+        <div id="score-counter">0</div>
       </div>
-      <script src="custom.js"></script>
+    </div>
+    <script src="animatedSprites.js" type="module"></script>
+    <script src="custom.js" type="module"></script>
 </body>
 </html>

@@ -1,89 +1,54 @@
-
 body{
-display: flex;
-}
-
-
-img {
-   max-width: 100%;
+  display: flex; 
   }
-
-#image {
-    background: url('duck-hunt.png') no-repeat -1px -25px;
-    position: absolute;
-    top: 600px;
-    width: 165px;
-    height: 120px;
-    animation-name: example;
-    animation-duration: 4s;
-}
-
-/*#image:hover{
-    transform: translateX(200º);
-}
-
-  @keyframes example {
-    from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(100%);
-      }
-  }*/
-
-    
-
-#duck{
-    display: flexbox;
-    align-content: space-around;
-    margin:50px;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 100px;
-    top: 100px; 
-    transition: width 2s;
-}
   
-#dog{
-    margin:50px;
-    width: 100px;
-    height: 100px;
+  .container {
+    position: relative;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  #duck-image {
     position: absolute;
-    left: 450px;
-    top: 450px; 
-}
-
-#dog2{
-    margin:50px;
-    width: 100px;
-    height: 100px;
+    top: 20%;
+    left: 0%;
+    width: 34px;
+    height: 24px;
+    background: url('duck-hunt.png') no-repeat -130px -121px;
+  }
+  
+  #dog-image {
     position: absolute;
-    left: 650px;
-    top: 450px; 
-}
-
-.scoreContainer{
-    background-color: black;
-    width: 100px;
-    height:100px;
-    color:#FFFFFF;
-    top:5%;
-    right:5%;
-    border: 4px solid black;
-    border-radius: 20px;
-    display:flex;
-    position:fixed;
-    flex-direction:column;
-    align-items:center;
+    top:80%;
+    left: 0%;
+    width: 53px;
+    height: 40px;
+    background: url('duck-hunt.png') no-repeat -5px -3px;
   }
-
-  #score-text{
-    font-size:1.5em;  
-  }
-
-  #score-counter{
-    font-size:3.1em;  
-    font-weight:bold;
-    color:#06E515;
-  }
+  
+  .scoreContainer{
+      background-color: black;
+      width: 100px;
+      height:100px;
+      color:#FFFFFF;
+      top:5%;
+      right:5%;
+      border: 4px solid black;
+      border-radius: 20px;
+      display:flex;
+      position:fixed;
+      flex-direction:column;
+      align-items:center;
+    }
+  
+    #score-text{
+      font-size:1.5em;  
+    }
+  
+    #score-counter{
+      font-size:3.1em;  
+      font-weight:bold;
+      color:#06E515;
+    }
