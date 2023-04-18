@@ -58,9 +58,9 @@ function horizontalFlightDuck() {
 }
 
 function runningDog() {
-  let position = -5;
-  const interval = 100;
-  const diff = 60;
+    let position = -5;
+    const interval = 100;
+    const diff = 60;
 
     dogID = setInterval(() => {
         document.getElementById("dog-image").style.backgroundPosition = `${position}px -3px`;
@@ -101,19 +101,19 @@ horizontalFlightDuck();
 const dogImage = document.getElementById("dog-image");
 
 dogImage.addEventListener("mymove", function() {
-  dogImage.style.animation = "none";
+    dogImage.style.animation = "none";
 });
 
 const duck= document.querySelector('#duck-image');
 
 const getRandomNum = (num) => {
     return Math.floor(Math.random() * Math.floor(num));
-  }
-  
-  const moveDuck = () => {
-    const w = 1000
-    const h = 500;  
+};
+
+const moveDuck = () => {
+    const w = 1000;
+    const h = 500;
     duck.style.top = getRandomNum(w) + 'px';
     duck.style.left = getRandomNum(h) + 'px';
-     
-  }
+
+};
