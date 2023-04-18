@@ -18,15 +18,57 @@ body{
     height: 24px;
     background: url('duck-hunt.png') no-repeat -130px -121px;
   }
-  
+  #duck-image2 {
+    position: absolute;
+    bottom: 28%;
+    left: 20%;
+    width: 34px;
+    height: 24px;
+    background: url('duck-hunt.png') no-repeat -130px -121px;
+    animation: fly 5s linear;
+  }
+
   #dog-image {
     position: absolute;
+    background-attachment: fixed;
     top:80%;
-    left: 0%;
+    left: 1%;
     width: 53px;
     height: 40px;
     background: url('duck-hunt.png') no-repeat -5px -3px;
+    animation: mymove 5s linear ;
   }
+
+  @keyframes mymove {
+    from {left:1%;}
+      to {left:50%;}
+  }
+
+  #dog-image2 {
+    position: absolute;
+    z-index: 10;
+    top:80%;
+    left: 50%;
+    width: 53px;
+    height: 50px;
+    background: url('duck-hunt.png') no-repeat -5px -56px;
+    animation: jump 4s linear;
+  }
+  
+  @keyframes jump {
+    from {top:80%}
+      to {top: 68%; left:55%;}
+  }
+
+  @keyframes fly {
+    10%{left: 20%; bottom: 30%;}
+    30%{left: 30%; bottom: 50%;}
+    50%{left: 40%; bottom: 70%;}
+    70%{left: 60%; bottom: 30%;}
+    100%{left: 100%; bottom: 100%;}
+  }
+  
+
   
   .scoreContainer{
       background-color: black;
