@@ -1,31 +1,56 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 body{
-  display: flex; 
+  display: flex;
+  min-height: 100vh;
   }
   
   .container {
     position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://bit.ly/2Q4q14a") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  #duck-image {
+
+  [id^="duck-image"] {
     position: absolute;
-    top: 20%;
-    left: 0%;
     width: 34px;
     height: 24px;
     background: url('duck-hunt.png') no-repeat -130px -121px;
   }
-  #duck-image2 {
+
+  #dead-duck {
     position: absolute;
-    bottom: 28%;
-    left: 20%;
-    width: 34px;
-    height: 24px;
-    background: url('duck-hunt.png') no-repeat -130px -121px;
-    animation: fly 5s linear;
+    width: 31px;
+	  height: 29px;
+    background: url('duck-hunt.png') no-repeat -131px -238px;
+  }
+
+  #falling-duck {
+    position: absolute;
+    width: 18px;
+    height: 30px;
+    background: url('duck-hunt.png') no-repeat -178px -237px;
   }
 
   #dog-image {

@@ -1,15 +1,16 @@
 const duck = document.querySelector('#duck-image');
 
-duck.addEventListener('click', () => {
-    increaseScore();
+document.addEventListener('click', (event) => {
+  const initialX = event.clientX;
+  const initialY = event.clientY;
 });
 
 const increaseScore = () => {
-    const score = document.querySelector("#score-counter").innerHTML;
+  const score = document.querySelector('#score-counter').innerHTML;
 
-    const scoreHTML = document.querySelector("#score-counter");
+  const scoreHTML = document.querySelector("#score-counter");
 
-    let count = Number(score);
+  let count = Number(score);
 
-    scoreHTML.innerHTML = count + 1;
+  scoreHTML.innerHTML = count + 1;
 };
