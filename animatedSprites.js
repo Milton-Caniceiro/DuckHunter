@@ -1,3 +1,4 @@
+/*
 function flyingDuck() {
     let position = -130;
     const interval = 100;
@@ -34,51 +35,8 @@ function horizontalFlightDuck() {
     }, interval);
 }
 
-function runningDog() {
-  let position = -5;
-  const interval = 100;
-  const diff = 60;
-
-    dogID = setInterval(() => {
-        document.getElementById("dog-image").style.backgroundPosition = `${position}px -3px`;
-
-        if (position > -240) {
-            position = position - diff;
-        } else {
-            position = -5;
-        }
-    }, interval);
-}
-
-function dogFindingDuck() {
-    
-}
-
-function jumpingDog() {
-    let position = -73;
-    const interval = 210;
-    const diff =60;
-  
-      dogID = setInterval(() => {
-          document.getElementById("dog-image3").style.backgroundPosition = `${position}px -73px`;
-  
-          if (position > -135) {
-              position = position - diff;
-          } else {
-             
-          }
-      }, interval);
-  }
-
-/*const dogLaugh = document.getElementById('dog-laugh');
-
-dogLaugh.addEventListener('animationend', () => {
-dogLaugh.style.display = 'none';
-});*/
 
 flyingDuck();
-runningDog();
-dogFindingDuck();
 horizontalFlightDuck();
 
 const dogImage = document.getElementById("dog-walk");
@@ -87,22 +45,19 @@ dogImage.addEventListener("mymove", function() {
     dogImage.style.animation = "none";
 });
 
+
+
 const duck= document.querySelector('#duck-image');
 
 const getRandomNum = (num) => {
     return Math.floor(Math.random() * Math.floor(num));
   }
   
-  const moveDuck = () => {
+const moveDuck = () => {
     const w = 1000
     const h = 500;  
     duck.style.top = getRandomNum(w) + 'px';
     duck.style.left = getRandomNum(h) + 'px';
      
-  }
-
-  const dogJumping = document.getElementById("dog-image3");
-
-dogJumping.addEventListener("jumping", function() {
-dogJumping.style.animation = "none";
-});
+}
+ // export {flyingDuck, horizontalFlightDuck, runningDog, jumpingDog, removeDog, moveDuck };

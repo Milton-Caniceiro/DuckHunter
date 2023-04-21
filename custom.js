@@ -1,6 +1,19 @@
+import {runningDog, jumpingDog, removeDog} from '/dog.js'
+
+const playButton = document.getElementById('play-button');
+    playButton.addEventListener('click', () => {
+        document.getElementById("begin").style.display = 'none';
+        startGame();
+ });
+ 
+function startGame(){
+runningDog();
+setTimeout(jumpingDog, 5000);
+setTimeout(removeDog, 5000);
 
 let bullet = 5;
-//const pew = document.getElementById("shot");
+const shotSound = document.getElementById("shotSound");
+
 
 const decreaseBullets = () => {
     const bullet = document.querySelector("#bullet-counter").innerHTML;
@@ -25,7 +38,7 @@ const increaseScore = () => {
 const duck = document.querySelector('#duck-image');
 
 duck.addEventListener('click', () => {
-    //pew.play();
+    shotSound.play();
     fallDown();
     setTimeout(dogWithDuck, 3050)
     setTimeout(hiddeDogWithDuck, 6100);
@@ -36,12 +49,13 @@ duck.addEventListener('click', () => {
 const img = document.querySelector('.container');
 
 img.addEventListener('click', () => {
-    //pew.play();
+    shotSound.play();
     showDogLaughing();
     decreaseBullets();
     setTimeout(hiddeDogLaughing, 2000);
    
 });
+
 
 const showDogLaughing = ()  => {
     const dogLaughing = document.getElementById('dog-laugh');
@@ -96,17 +110,20 @@ const showFallingDuck = () => {
     const fallingDuck = document.getElementById('falling-duck');
     fallingDuck.style.display = 'block';
   };
-  const hideDeadDuck = () => {
+
+const hideDeadDuck = () => {
     const deadDuck = document.getElementById('dead-duck');
     deadDuck.style.display = 'none';
-  };
-  const hideFallingDuck = () => {
+};
+
+const hideFallingDuck = () => {
     const fallingDuck = document.getElementById('falling-duck');
     fallingDuck.style.display = 'none';
-  };
+};
 
 function gameOver(){
-    if(bullet<=0){
+    if(bullet>0){
         
     }
+}
 }
