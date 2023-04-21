@@ -3,7 +3,7 @@ function flyingDuck() {
     const interval = 100;
     const diff = 40;
 
-    const duckID = setInterval(() => {
+     setInterval(() => {
         document.getElementById("duck-image").style.backgroundPosition = `${position}px -121px`;
 
         if (position > -200) {

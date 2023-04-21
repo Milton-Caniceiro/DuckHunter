@@ -44,12 +44,12 @@ img.addEventListener('click', () => {
 });
 
 const showDogLaughing = ()  => {
-    const dogLaughing = document.getElementById('dogLaugh');
+    const dogLaughing = document.getElementById('dog-laugh');
     dogLaughing.style.display = 'block';
 }
 
 const hiddeDogLaughing = ()  => {
-    const dogLaughing = document.getElementById('dogLaugh');
+    const dogLaughing = document.getElementById('dog-laugh');
     dogLaughing.style.display = 'none';
 }
 
