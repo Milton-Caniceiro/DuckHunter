@@ -51,19 +51,7 @@ function runningDog() {
 }
 
 function dogFindingDuck() {
-    let position = -73;
-    const interval = 210;
-    const diff =60;
-  
-      dogID = setInterval(() => {
-          document.getElementById("dog-image2").style.backgroundPosition = `${position}px -73px`;
-  
-          if (position > -135) {
-              position = position - diff;
-          } else {
-              position = -74;
-          }
-      }, interval);
+    
 }
 
 function jumpingDog() {
@@ -77,18 +65,20 @@ function jumpingDog() {
           if (position > -135) {
               position = position - diff;
           } else {
-              position = -74;
+             
           }
       }, interval);
   }
 
-const dogLaugh = document.getElementById('dog-laugh');
+/*const dogLaugh = document.getElementById('dog-laugh');
 
 dogLaugh.addEventListener('animationend', () => {
-  dogLaugh.style.display = 'none';
-});
+dogLaugh.style.display = 'none';
+});*/
+
 flyingDuck();
 runningDog();
+dogFindingDuck();
 horizontalFlightDuck();
 
 const dogImage = document.getElementById("dog-walk");
@@ -108,5 +98,11 @@ const getRandomNum = (num) => {
     const h = 500;  
     duck.style.top = getRandomNum(w) + 'px';
     duck.style.left = getRandomNum(h) + 'px';
+     
+  }
 
-};
+  const dogJumping = document.getElementById("dog-image3");
+
+dogJumping.addEventListener("jumping", function() {
+dogJumping.style.animation = "none";
+});

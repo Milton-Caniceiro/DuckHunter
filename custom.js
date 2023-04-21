@@ -1,5 +1,4 @@
 
-
 let bullet = 5;
 //const pew = document.getElementById("shot");
 
