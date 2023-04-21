@@ -1,76 +1,164 @@
+html{
+    cursor: crosshair;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 body{
-  display: flex; 
+  display: flex;
+  min-height: 100vh;
   }
-  
-  .container {
+
+.container {
     position: relative;
-  }
-  
-  img {
-    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://bit.ly/2Q4q14a") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
   
   #duck-image {
     position: absolute;
-    top: 20%;
-    left: 0%;
+    top: 100px;
+    left: 0px;
     width: 34px;
     height: 24px;
     background: url('duck-hunt.png') no-repeat -130px -121px;
-  }
-  #duck-image2 {
-    position: absolute;
-    bottom: 28%;
-    left: 20%;
-    width: 34px;
-    height: 24px;
-    background: url('duck-hunt.png') no-repeat -130px -121px;
-    animation: fly 5s linear;
   }
 
-  #dog-image {
+
+  #dead-duck {
     position: absolute;
-    background-attachment: fixed;
-    top:80%;
+    width: 31px;
+    height: 29px;
+    background: url('duck-hunt.png') no-repeat -131px -238px;
+  }
+  #falling-duck {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 18px;
+    height: 30px;
+    background: url('duck-hunt.png') no-repeat -178px -237px;
+  }
+
+#dog-walk {
+    position: absolute;
+    top:84%;
     left: 1%;
-    width: 53px;
-    height: 40px;
+    width: 54px;
+    height: 44px;
     background: url('duck-hunt.png') no-repeat -5px -3px;
     animation: mymove 5s linear ;
-  }
+}
 
-  @keyframes mymove {
+@keyframes mymove {
     from {left:1%;}
       to {left:50%;}
-  }
+}
 
-  #dog-image2 {
+#dog-image2 {
     position: absolute;
-    z-index: 10;
-    top:80%;
+    top:84%;
     left: 50%;
     width: 53px;
     height: 50px;
     background: url('duck-hunt.png') no-repeat -5px -56px;
-    animation: jump 4s linear;
-  }
-  
-  @keyframes jump {
-    from {top:80%}
-      to {top: 68%; left:55%;}
+}
+
+#dog-image3 {
+    position: absolute;
+    top:80%;
+    left: 50%;
+    width: 37px;
+    height: 46px;
+    background: url('duck-hunt.png') no-repeat -74px -60px;
+}
+ 
+
+#dog-laugh {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: url('duck-hunt.png') no-repeat -197px -63px;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    transition: ease-in-out;
+    animation: dogLaugh 200ms infinite steps(1) alternate;
+}
+
+@keyframes dogLaugh {
+    0% {
+      background-position: -197px -63px;
+    }
+    50% {
+      background-position: -257px -63px;
+    }
+    100% {
+      background-position: -197px -63px;
+    }
   }
 
-  @keyframes fly {
-    10%{left: 20%; bottom: 30%;}
-    30%{left: 30%; bottom: 50%;}
-    50%{left: 40%; bottom: 70%;}
-    70%{left: 60%; bottom: 30%;}
-    100%{left: 100%; bottom: 100%;}
-  }
-  
 
+#dogWithDuck {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 70%;
+    left: 35%;
+    background: url('duck-hunt.png') no-repeat -332px -3px;
+    animation: dogAppearingDuck;
+ }
+
+ @keyframes dogAppearingDuck {
+    0% {top: 70%;}
+    50%{top: 75%;}
+    100%{top: 70%;}
+  }
+
+ .bulletContainer{
+    background-color: black;
+    width: 100px;
+    height:100px;
+    color:#FFFFFF;
+    top:20%;
+    right:5%;
+    border: 4px solid black;
+    border-radius: 20px;
+    display:flex;
+    position:fixed;
+    flex-direction:column;
+    align-items:center;
+ }
+ #bullet-text{
+    font-size:1.5em;  
+}
   
-  .scoreContainer{
+#bullet-counter{
+    font-size:3.1em;  
+    font-weight:bold;
+    color:#06E515;
+}
+ .scoreContainer{
       background-color: black;
       width: 100px;
       height:100px;
@@ -83,14 +171,14 @@ body{
       position:fixed;
       flex-direction:column;
       align-items:center;
-    }
+}
+
+#score-text{
+    font-size:1.5em;  
+}
   
-    #score-text{
-      font-size:1.5em;  
-    }
-  
-    #score-counter{
-      font-size:3.1em;  
-      font-weight:bold;
-      color:#06E515;
-    }
+#score-counter{
+    font-size:3.1em;  
+    font-weight:bold;
+    color:#06E515;
+}

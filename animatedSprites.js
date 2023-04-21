@@ -1,33 +1,10 @@
-let duckID, dogID;
-
-function stopAnimate() {
-    clearInterval(duckID);
-    clearInterval(dogID);
-}
-
 function flyingDuck() {
     let position = -130;
     const interval = 100;
     const diff = 40;
 
-    duckID = setInterval(() => {
+     setInterval(() => {
         document.getElementById("duck-image").style.backgroundPosition = `${position}px -121px`;
-
-        if (position > -200) {
-            position = position - diff;
-        } else {
-            position = -130;
-        }
-    }, interval);
-}
-
-function flyingDuck2() {
-    let position = -130;
-    const interval = 100;
-    const diff = 40;
-
-    duckID = setInterval(() => {
-        document.getElementById("duck-image2").style.backgroundPosition = `${position}px -121px`;
 
         if (position > -200) {
             position = position - diff;
@@ -73,35 +50,41 @@ function runningDog() {
     }, interval);
 }
 
-/*function jumpingDog() {
-    let position = -5;
-    let spriteIndex = 40;
-    const interval = 100;
-    const diff = 60;
+function dogFindingDuck() {
+    
+}
+
+function jumpingDog() {
+    let position = -73;
+    const interval = 210;
+    const diff =60;
   
-    dogID = setInterval(() => {
-      const dogImage = document.getElementById("dog-image2");
-      dogImage.style.backgroundPosition = `${position}px -1px`;
-      //dogImage.classList.remove(`sprite${spriteIndex}`);
+      dogID = setInterval(() => {
+          document.getElementById("dog-image3").style.backgroundPosition = `${position}px -73px`;
   
-      if (position > -240) {
-        position = position - diff;
-      } else {
-      
-      }
-    }, interval);
-  }*/
+          if (position > -135) {
+              position = position - diff;
+          } else {
+             
+          }
+      }, interval);
+  }
+
+/*const dogLaugh = document.getElementById('dog-laugh');
+
+dogLaugh.addEventListener('animationend', () => {
+dogLaugh.style.display = 'none';
+});*/
 
 flyingDuck();
-flyingDuck2();
 runningDog();
-
+dogFindingDuck();
 horizontalFlightDuck();
 
-const dogImage = document.getElementById("dog-image");
+const dogImage = document.getElementById("dog-walk");
 
 dogImage.addEventListener("mymove", function() {
-  dogImage.style.animation = "none";
+    dogImage.style.animation = "none";
 });
 
 const duck= document.querySelector('#duck-image');
@@ -117,3 +100,9 @@ const getRandomNum = (num) => {
     duck.style.left = getRandomNum(h) + 'px';
      
   }
+
+  const dogJumping = document.getElementById("dog-image3");
+
+dogJumping.addEventListener("jumping", function() {
+dogJumping.style.animation = "none";
+});
