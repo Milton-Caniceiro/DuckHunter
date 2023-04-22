@@ -3,17 +3,22 @@ import {runningDog, jumpingDog, removeDog} from '/dog.js'
 const playButton = document.getElementById('play-button');
     playButton.addEventListener('click', () => {
         document.getElementById("begin").style.display = 'none';
-        startGame();
+        startGame()
  });
- 
+
+
 function startGame(){
 runningDog();
 setTimeout(jumpingDog, 5000);
 setTimeout(removeDog, 5000);
+if(bullet<0){
+    document.getElementById("gameOver").style.display = 'block';
+}
+}
 
 let bullet = 5;
-const shotSound = document.getElementById("shotSound");
 
+const shotSound = document.getElementById("shotSound");
 
 const decreaseBullets = () => {
     const bullet = document.querySelector("#bullet-counter").innerHTML;
@@ -55,7 +60,6 @@ img.addEventListener('click', () => {
     setTimeout(hiddeDogLaughing, 2000);
    
 });
-
 
 const showDogLaughing = ()  => {
     const dogLaughing = document.getElementById('dog-laugh');
@@ -104,7 +108,7 @@ function fallDown() {
         fallingDuck.style.top = `${positionY}px`;
     }, interval);
     setTimeout(hideFallingDuck, 3000);
-}
+
 
 const showFallingDuck = () => {
     const fallingDuck = document.getElementById('falling-duck');
@@ -120,10 +124,4 @@ const hideFallingDuck = () => {
     const fallingDuck = document.getElementById('falling-duck');
     fallingDuck.style.display = 'none';
 };
-
-function gameOver(){
-    if(bullet>0){
-        
-    }
-}
 }
