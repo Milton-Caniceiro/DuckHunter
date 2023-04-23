@@ -77,6 +77,7 @@ button {
 
 #dog-walk {
     position: absolute;
+    scale: 2;
     top:84%;
     left: 1%;
     width: 54px;
@@ -90,8 +91,9 @@ button {
     to {left:50%;}
 }
 
-#dog-image2 {
+#dog-jump {
     position: absolute;
+    scale: 2;
     top:84%;
     left: 50%;
     width: 53px;
@@ -102,7 +104,7 @@ button {
 
 @keyframes jumping {
   from {top:84%;}
-  to {top:78%; left: 52%;}
+  to {top:75%; left: 52%;}
 }
 
 #dog-laugh {
