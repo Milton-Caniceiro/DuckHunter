@@ -105,7 +105,7 @@ button {
     width: 53px;
     height: 48px;
     background: url('duck-hunt.png') no-repeat -5px -59px;
-    animation: jumping 1s linear ;
+    animation: jumping 3s linear ;
 }
 
 @keyframes jumping {
