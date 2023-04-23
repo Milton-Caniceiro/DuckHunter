@@ -21,7 +21,7 @@ function jumpingDog() {
   const interval = 210;
   const diff = 70;
 
-  const dog2Element = document.getElementById('dog-image2');
+  const dog2Element = document.getElementById('dog-jump');
   dog2Element.style.display = 'block';
   const dog2ID = setInterval(() => {
     dog2Element.style.backgroundPosition = `${position}px -59px`;

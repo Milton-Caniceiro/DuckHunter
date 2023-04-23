@@ -9,6 +9,7 @@ playButton.addEventListener('click', () => {
 });
 
 function startGame() {
+  document.getElementById('dog-walk').style.display = 'block';
   runningDog();
   setTimeout(jumpingDog, 6600);
   setTimeout(removeDog, 6500);
@@ -30,6 +31,7 @@ document.addEventListener('click', (event) => {
       shotSound.play();
       dogWithDuck();
       decreaseBullets();
+      increaseScore();
       createDuck();
     }
   }
