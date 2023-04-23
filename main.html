@@ -9,13 +9,27 @@
 
 </head>
 <body>
-    <div class="container" id="field">
-      <div class='scoreContainer'>
+ 
+  <div class="container" id="field">
+    <div class="begin" id="begin">
+      <button id="play-button">Play</button>
+    </div>
+      <div src="duck-hunt.png" id="dog-walk" style="display: none;"></div>
+      <div src="duck-hunt.png" id="dog-image2"style="display: none;"></div>
+      <div src="duck-hunt.png" id="dog-laugh" style="display:none"></div>
+      <div src="duck-hunt.png" id="dogWithDuck" style="display:none"></div>
+      <div class="bulletContainer">
+          <div id="bullet-text">Bullets</div>
+          <div id="bullet-counter">5</div>
+        </div>
+      <div class="scoreContainer">
         <div id="score-text">Score</div>
         <div id="score-counter">0</div>
       </div>
+      <div class="gameOver" id="gameOver" style="display: none"></div>
     </div>
-    <script src="duck.js" type="module"></script>
-    <script src="custom.js" type="module"></script>
+    <audio id="shotSound" src="shotGun.mp3"></audio>
+    <script type="module" src="custom.js" ></script>
+    <script type="module" src="dog.js" ></script>
 </body>
 </html>
