@@ -9,12 +9,12 @@
 
 </head>
 <body>
- 
+  <div class="begin" id="begin">
+    <button id="play-button">Play</button>
+  </div>
   <div class="container" id="field">
-    <div class="begin" id="begin">
-      <button id="play-button">Play</button>
     </div>
-      <div src="duck-hunt.png" id="dog-walk" style="display: none;"></div>
+      <div src="duck-hunt.png" id="dog-walk" style="display: block;"></div>
       <div src="duck-hunt.png" id="dog-image2"style="display: none;"></div>
       <div src="duck-hunt.png" id="dog-laugh" style="display:none"></div>
       <div src="duck-hunt.png" id="dogWithDuck" style="display:none"></div>
@@ -26,10 +26,11 @@
         <div id="score-text">Score</div>
         <div id="score-counter">0</div>
       </div>
-      <div class="gameOver" id="gameOver" style="display: none"></div>
+      <!-- <div class="gameOver" id="gameOver" style="display: none"></div> -->
     </div>
     <audio id="shotSound" src="shotGun.mp3"></audio>
     <script type="module" src="custom.js" ></script>
     <script type="module" src="dog.js" ></script>
+    <script type="module" src="duck.js" ></script>
 </body>
 </html>

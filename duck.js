@@ -12,22 +12,24 @@ const createDuck = () => {
 
   duckDiv.style.backgroundImage = 'url(\'duck-hunt.png\')';
 
+  duckDiv.classList.add('duck');
+
   duckDiv.state = 'flying';
 
   document.body.appendChild(duckDiv);
 
   horizontalFlyingDuck(duckDiv);
 
-  const killDuck = (event) => {
-    const duck = event.target;
-    if (duck.state === 'flying') {
-      clearInterval(duck.flyInterval);
-      fallingDuck(duck);
-      duck.state = 'falling';
-    }
-  };
+  // const killDuck = (event) => {
+  //   const duck = event.target;
+  //   if (duck.state === 'flying') {
+  //     clearInterval(duck.flyInterval);
+  //     fallingDuck(duck);
+  //     duck.state = 'falling';
+  //   }
+  // };
 
-  addEventListener('click', killDuck);
+  // addEventListener('click', killDuck);
 };
 
 function horizontalDuckAnimation(duckDiv) {
@@ -84,5 +86,4 @@ function fallingDuck(duckDiv) {
   }, interval);
 }
 
-createDuck();
-createDuck();
+export {createDuck, horizontalFlyingDuck, horizontalDuckAnimation, fallingDuck};
