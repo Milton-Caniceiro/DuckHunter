@@ -10,6 +10,7 @@ playButton.addEventListener('click', () => {
 
 function startGame() {
   document.getElementById('dog-walk').style.display = 'block';
+  barkingDog.play();
   runningDog();
   setTimeout(jumpingDog, 6600);
   setTimeout(removeDog, 6500);
@@ -17,9 +18,11 @@ function startGame() {
 }
 
 let bulletCounter = 5;
+let score = 0;
 const bulletCounterElement = document.getElementById('bullet-counter');
-
+const scoreHTML = document.querySelector('#score-counter');
 const shotSound = document.getElementById('shotSound');
+const gameOverSound = document.getElementById('gameOverSound');
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('duck')) {
@@ -88,13 +91,16 @@ const decreaseBullets = () => {
 };
 
 const increaseScore = () => {
-  const score = document.querySelector('#score-counter').innerHTML;
+  score += 100;
+  scoreHTML.innerHTML = score;
 
-  const scoreHTML = document.querySelector('#score-counter');
+  // const score = document.querySelector('#score-counter').innerHTML;
 
-  let count = Number(score);
+  // const scoreHTML = document.querySelector('#score-counter');
 
-  scoreHTML.innerHTML = count + 100;
+  // const count = Number(score);
+
+  // scoreHTML.innerHTML = count + 100;
 };
 
 const endGame = () => {
@@ -102,6 +108,7 @@ const endGame = () => {
     const gameOver = document.createElement('div');
     gameOver.id = 'gameOver';
     document.body.appendChild(gameOver);
+    gameOverSound.play();
   }
 };
 

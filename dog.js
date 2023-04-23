@@ -3,8 +3,10 @@ function runningDog() {
   let position = -5;
   const interval = 100;
   const diff = 60;
-
+  const barkingDog = document.getElementById('barkingDog');
   const dogElement = document.getElementById('dog-walk');
+  barkingDog.play();
+
   const dogID = setInterval(() => {
     dogElement.style.backgroundPosition = `${position}px -3px`;
 
