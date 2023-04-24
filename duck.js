@@ -6,7 +6,7 @@ const createDuck = () => {
   duckDiv.id = 'duck-image'+ duckCounter.toString();
 
   const screenHeight = window.innerHeight;
-  const y = Math.floor(Math.random() * screenHeight);
+  const y = Math.floor(Math.random() * (screenHeight - 200));
   duckDiv.style.left = 0 + 'px';
   duckDiv.style.top = y + 'px';
 
@@ -19,17 +19,6 @@ const createDuck = () => {
   document.body.appendChild(duckDiv);
 
   horizontalFlyingDuck(duckDiv);
-
-  // const killDuck = (event) => {
-  //   const duck = event.target;
-  //   if (duck.state === 'flying') {
-  //     clearInterval(duck.flyInterval);
-  //     fallingDuck(duck);
-  //     duck.state = 'falling';
-  //   }
-  // };
-
-  // addEventListener('click', killDuck);
 };
 
 function horizontalDuckAnimation(duckDiv) {
@@ -50,7 +39,7 @@ function horizontalDuckAnimation(duckDiv) {
 
 function horizontalFlyingDuck(duckDiv) {
   let positionX = parseInt(duckDiv.style.left);
-  const diffX = 10;
+  const diffX = Math.random() * (20 - 10) + 10;
   const maxPositionX = window.innerWidth - duckDiv.offsetWidth;
   const interval = 100;
   horizontalDuckAnimation(duckDiv);
@@ -68,7 +57,6 @@ function horizontalFlyingDuck(duckDiv) {
 }
 
 function fallingDuck(duckDiv) {
-  //deadDuckAnimation(duckDiv);
   let positionY = parseInt(duckDiv.style.top);
   const diffY = 20;
   const maxPositionY = window.innerHeight - duckDiv.offsetHeight;
@@ -86,4 +74,5 @@ function fallingDuck(duckDiv) {
   }, interval);
 }
 
-export {createDuck, horizontalFlyingDuck, horizontalDuckAnimation, fallingDuck};
+// eslint-disable-next-line max-len
+export {createDuck, horizontalFlyingDuck, horizontalDuckAnimation, fallingDuck, duckCounter};

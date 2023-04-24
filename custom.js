@@ -10,19 +10,42 @@ playButton.addEventListener('click', () => {
 
 function startGame() {
   document.getElementById('dog-walk').style.display = 'block';
-  barkingDog.play();
   runningDog();
-  setTimeout(jumpingDog, 6600);
-  setTimeout(removeDog, 6500);
-  createDuck();
+  setTimeout(() => jumpingDog(), 6600);
+  setTimeout(() =>removeDog(), 6500);
+  setTimeout(() => startRounds(), 7000);
 }
 
 let bulletCounter = 5;
 let score = 0;
+let roundCounter = 0;
+let ducksShot = 0;
+const ducksPerRound = [1, 2, 3, 4, 5, 6];
+const goalOfDucksShotPerRound = [1, 2, 4, 8, 12, 18];
 const bulletCounterElement = document.getElementById('bullet-counter');
 const scoreHTML = document.querySelector('#score-counter');
 const shotSound = document.getElementById('shotSound');
 const gameOverSound = document.getElementById('gameOverSound');
+
+const startRounds = () => {
+  const ducksThisRound = ducksPerRound[roundCounter];
+  for (let i = 0; i < ducksThisRound; i++) {
+    createDuck();
+  }
+  setInterval(() => {
+    checkRound();
+  }, 100);
+};
+
+const checkRound = () => {
+  if (ducksShot >= goalOfDucksShotPerRound[roundCounter]) {
+    bulletCounter += ducksPerRound[roundCounter];
+    roundCounter++;
+    startRounds();
+  } if (roundCounter === ducksPerRound.length - 1) {
+    gameOver();
+  }
+};
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('duck')) {
@@ -33,20 +56,13 @@ document.addEventListener('click', (event) => {
       duck.state = 'falling';
       shotSound.play();
       dogWithDuck();
+      setTimeout(() => hideDogWithDuck(), 2000);
       decreaseBullets();
       increaseScore();
-      createDuck();
+      ducksShot++;
     }
   }
 });
-
-// addEventListener('click', () => {
-//   shotSound.play();
-//   setTimeout(dogWithDuck, 3050);
-//   setTimeout(hiddeDogWithDuck, 6100);
-//   increaseScore();
-//   decreaseBullets();
-// });
 
 const img = document.querySelector('.container');
 
@@ -54,15 +70,16 @@ img.addEventListener('click', () => {
   shotSound.play();
   showDogLaughing();
   decreaseBullets();
-  setTimeout(hiddeDogLaughing, 2000);
+  setTimeout(hideDogLaughing, 2000);
 });
 
 const showDogLaughing = () => {
   const dogLaughing = document.getElementById('dog-laugh');
+  laughingDog.play();
   dogLaughing.style.display = 'block';
 };
 
-const hiddeDogLaughing = () => {
+const hideDogLaughing = () => {
   const dogLaughing = document.getElementById('dog-laugh');
   dogLaughing.style.display = 'none';
 };
@@ -72,43 +89,34 @@ const dogWithDuck = () => {
   dogWithDuck.style.display = 'block';
 };
 
-const hiddeDogWithDuck = () => {
+const hideDogWithDuck = () => {
   document.getElementById('dogWithDuck');
   const dogWithDuck = document.getElementById('dogWithDuck');
   dogWithDuck.style.display = 'none';
 };
 
-// if (bullet < 0) {
-//   document.getElementById('gameOver').style.display = 'block';
-// }
-
 const decreaseBullets = () => {
   if (bulletCounter > 0) {
     bulletCounter--;
     bulletCounterElement.innerHTML = bulletCounter;
-    endGame();
+    gameOverCheck();
   }
 };
 
 const increaseScore = () => {
   score += 100;
   scoreHTML.innerHTML = score;
-
-  // const score = document.querySelector('#score-counter').innerHTML;
-
-  // const scoreHTML = document.querySelector('#score-counter');
-
-  // const count = Number(score);
-
-  // scoreHTML.innerHTML = count + 100;
 };
 
-const endGame = () => {
+const gameOverCheck = () => {
   if (bulletCounter <= 0) {
-    const gameOver = document.createElement('div');
-    gameOver.id = 'gameOver';
-    document.body.appendChild(gameOver);
-    gameOverSound.play();
+    gameOver();
   }
 };
 
+const gameOver = () => {
+  const gameOver = document.createElement('div');
+  gameOver.id = 'gameOver';
+  document.body.appendChild(gameOver);
+  gameOverSound.play();
+};
